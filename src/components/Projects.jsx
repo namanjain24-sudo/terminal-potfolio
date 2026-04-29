@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Github, Terminal, Folder, ExternalLink, Code } from 'lucide-react';
 
 const Projects = () => {
+    // Note: Video files are handled via Git LFS
     const projects = [
         {
             id: '01',
