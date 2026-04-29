@@ -4,10 +4,10 @@ import { Github, Linkedin, Mail, FileText, Code } from 'lucide-react';
 
 const SocialSidebar = () => {
     const socials = [
-        { icon: <Linkedin size={20} strokeWidth={2.5} />, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-blue-500" },
-        { icon: <Github size={20} strokeWidth={2.5} />, href: "https://github.com", label: "GitHub", color: "hover:text-white" },
-        { icon: <Code size={20} strokeWidth={2.5} />, href: "https://leetcode.com", label: "LeetCode", color: "hover:text-orange-500" },
-        { icon: <Mail size={20} strokeWidth={2.5} />, href: "mailto:your.email@example.com", label: "Email", color: "hover:text-emerald-500" },
+        { icon: <Linkedin size={20} strokeWidth={2.5} />, href: "https://www.linkedin.com/in/naman-jain-067601323/", label: "LinkedIn", color: "hover:text-blue-500" },
+        { icon: <Github size={20} strokeWidth={2.5} />, href: "https://github.com/namanjain24-sudo", label: "GitHub", color: "hover:text-white" },
+        { icon: <Code size={20} strokeWidth={2.5} />, href: "https://leetcode.com/u/Namanof/", label: "LeetCode", color: "hover:text-orange-500" },
+        { icon: <Mail size={20} strokeWidth={2.5} />, href: "mailto:[namanjainpy@gmail.com]", label: "Email", color: "hover:text-emerald-500" },
         { icon: <FileText size={20} strokeWidth={2.5} />, href: "/resume.pdf", label: "Resume", color: "hover:text-purple-500", download: true },
     ];
 

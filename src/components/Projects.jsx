@@ -9,67 +9,66 @@ const Projects = () => {
             title: 'Talent-IQ',
             description: "The ultimate platform for collaborative coding interviews and pair programming. Connect face-to-face, code in real-time, and ace your technical interviews.",
             tech: ['Next.js', 'Tailwind', 'JavaScript', 'Node.js'],
-            link: 'https://talent-1k5h60cdg-namanjain24-sudos-projects.vercel.app?_vercel_share=0vr8lTMthoFpcNb3e9uZJQeWXF00vPA9',
+            link: 'https://talent-1k5h60cdg-namanjain24-sudos-projects.vercel.app?_vercel_share=IzZ13dafQ3iS8ilNELdaRVAB9oT5w6re',
             github: 'https://github.com/namanjain24-sudo/talent-IQ',
-            status: 'live',
-            type: 'browser',
-            video: 'https://cdn.coverr.co/videos/coverr-typing-code-on-a-computer-screen-4614/1080p.mp4'
+            video: '/talent-iq.mp4',
+            image: null
         },
         {
             id: '02',
-            title: 'weather_station',
-            description: "Real-time weather monitoring subsystem. Features dynamic background rendering based on atmospheric data.",
-            tech: ['React', 'Node.js', 'Express'],
-            link: '#',
-            github: '#',
+            title: 'HomeScope360',
+            description: "Advanced property listing engine featuring interactive 360° virtual tours, live pricing synchronization, and high-precision home search protocols.",
+            tech: ['React', 'HTML5', 'CSS3', 'JavaScript'],
+            link: 'https://home-scope360-ptoo85afk-namanjain24-sudos-projects.vercel.app/',
+            github: 'https://github.com/namanjain24-sudo/HomeScope360',
             status: 'active',
             type: 'widget',
-            video: 'https://cdn.coverr.co/videos/coverr-clouds-in-the-sky-3454/1080p.mp4'
+            video: '/homescape360.mp4'
         },
         {
             id: '03',
-            title: 'synth_commerce',
-            description: "Full-stack e-commerce platform with stripe integration and secure cart protocols.",
-            tech: ['Next.js', 'Postgres', 'Prisma'],
-            link: '#',
-            github: '#',
+            title: 'CryptoVision',
+            description: "Real-time cryptocurrency analytics grid synchronizing live market tickers and interactive telemetry charts via high-frequency REST APIs.",
+            tech: ['React', 'Tailwind', 'Chart.js', 'REST API'],
+            link: 'https://crypto-vision-ecru.vercel.app/',
+            github: 'https://github.com/namanjain24-sudo/CryptoVision',
             status: 'deployed',
             type: 'browser',
-            video: 'https://cdn.coverr.co/videos/coverr-online-shopping-credit-card-4682/1080p.mp4'
+            video: '/CryptoVision.mp4'
         },
         {
             id: '04',
-            title: 'chat_protocol',
-            description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
-            tech: ['Socket.io', 'React', 'Node'],
-            link: '#',
-            github: '#',
+            title: 'ArchForge',
+            description: "ArchForge is a concept-driven platform that explores innovative architectural ideas through digital design and visualization. It showcases creative problem-solving and modern design thinking, though it is a conceptual project and may not fully reflect real-world accuracy.",
+            tech: ['React.js', 'Next.js', 'Tailwind CSS', 'JavaScript', 'HTML5', 'CSS3'],
+            link: 'https://archforge.vercel.app/?_vercel_share=JDxYCZUkL8Jlinv2JTUq5TpgbNv7UcRK',
+            github: 'https://github.com/namanjain24-sudo/archforge',
             status: 'prototype',
             type: 'terminal',
-            video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
+            video: '/ArchForge.mP4'
         },
-        {
-            id: '05',
-            title: 'chat_protocol',
-            description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
-            tech: ['Socket.io', 'React', 'Node'],
-            link: '#',
-            github: '#',
-            status: 'prototype',
-            type: 'terminal',
-            video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
-        },
-        {
-            id: '06',
-            title: 'chat_protocol',
-            description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
-            tech: ['Socket.io', 'React', 'Node'],
-            link: '#',
-            github: '#',
-            status: 'prototype',
-            type: 'terminal',
-            video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
-        }
+        //     {
+        //         id: '05',
+        //         title: 'chat_protocol',
+        //         description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
+        //         tech: ['Socket.io', 'React', 'Node'],
+        //         link: '#',
+        //         github: '#',
+        //         status: 'prototype',
+        //         type: 'terminal',
+        //         video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
+        //     },
+        //     {
+        //         id: '06',
+        //         title: 'chat_protocol',
+        //         description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
+        //         tech: ['Socket.io', 'React', 'Node'],
+        //         link: '#',
+        //         github: '#',
+        //         status: 'prototype',
+        //         type: 'terminal',
+        //         video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
+        //     }
     ];
 
     return (
@@ -165,17 +164,82 @@ const TerminalCard = ({ project, index }) => {
 
                 <div className="relative z-10 flex flex-col h-full">
 
-                    {/* Project Video Preview */}
-                    <div className="mb-4 rounded overflow-hidden border border-white/5 group-hover:border-white/10 transition-colors relative h-32">
-                        <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-10 transition-opacity z-10 pointer-events-none" />
-                        <video
-                            src={project.video}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0"
-                        />
+                    {/* Project Preview Area (Iframe or Placeholder) */}
+                    <div className="mb-4 rounded overflow-hidden border border-white/5 group-hover:border-white/10 transition-colors relative h-40 bg-[#050505]">
+                        <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-10 transition-opacity z-20 pointer-events-none" />
+
+                        {project.video && project.video !== '#' ? (
+                            <div className="w-full h-full relative group/video">
+                                <video
+                                    src={project.video}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                />
+                                {/* CRT Scanline Overlay */}
+                                <div className="absolute inset-0 pointer-events-none z-10 opacity-[0.15]"
+                                    style={{
+                                        backgroundImage: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))',
+                                        backgroundSize: '100% 2px, 3px 100%'
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-10 transition-opacity z-20 pointer-events-none" />
+                            </div>
+                        ) : project.image ? (
+                            <div className="w-full h-full relative group/image overflow-hidden">
+                                <motion.img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-[150%] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                    animate={{
+                                        y: ["0%", "-33%", "0%"]
+                                    }}
+                                    transition={{
+                                        duration: 20,
+                                        repeat: Infinity,
+                                        ease: "linear"
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-10 transition-opacity z-10 pointer-events-none" />
+                            </div>
+                        ) : project.link !== '#' && project.status === 'live' ? (
+                            <div className="w-full h-full relative group/iframe">
+                                <div className="absolute inset-0 z-10 bg-black/40 group-hover/iframe:bg-transparent transition-colors duration-500" />
+                                <iframe
+                                    src={project.link}
+                                    title={project.title}
+                                    className="w-[300%] h-[300%] border-none origin-top-left scale-[0.333] grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                                    loading="lazy"
+                                />
+                                {/* Overlay to indicate live preview */}
+                                <div className="absolute bottom-2 right-2 z-20 px-1.5 py-0.5 bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 rounded text-[8px] text-emerald-500 font-bold uppercase tracking-tighter">
+                                    Live Preview
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="w-full h-full flex flex-col items-center justify-center bg-[#0d0d0f] relative overflow-hidden">
+                                <Code size={40} className="text-stone-800 mb-2" />
+                                <span className="text-[10px] text-stone-700 font-mono">ENCRYPTED_PREVIEW</span>
+
+                                {/* Static "Glitch" Background for placeholders */}
+                                <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                                    <div className="w-full h-full" style={{ backgroundImage: 'repeating-linear-gradient(0deg, #fff, #fff 1px, transparent 1px, transparent 2px)', backgroundSize: '100% 3px' }} />
+                                </div>
+
+                                {project.video && project.video !== '#' && (
+                                    <video
+                                        src={project.video}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale"
+                                    />
+                                )}
+                            </div>
+                        )}
                     </div>
 
                     {/* Title & Status */}

@@ -46,19 +46,15 @@ const Hero = ({ onOpenPanel }) => {
     // Handler to prevent default anchor and open panel
     // Handler to prevent default anchor and open panel
     const handleNavClick = (e, targetId) => {
-        // If mobile (check width), allow default scrolling behavior
-        if (window.innerWidth < 768) {
-            return;
-        }
+        // If onOpenPanel is not provided (e.g. mobile), allow default anchor behavior
+        if (!onOpenPanel) return;
 
         e.preventDefault();
-        if (onOpenPanel) onOpenPanel(targetId);
-        // Optional: Smooth scroll to target inside panel if needed, 
-        // but for now just opening panel is the request.
+        onOpenPanel(targetId);
     };
 
     return (
-        <section className="relative w-full min-h-screen lg:h-screen flex flex-col items-center justify-start overflow-x-hidden bg-[#1a1a1d] text-stone-300 font-mono snap-start">
+        <section id="home" className="relative w-full min-h-screen lg:h-screen flex flex-col items-center justify-start overflow-x-hidden bg-[#1a1a1d] text-stone-300 font-mono snap-start">
             {/* Light Mode Overlay (Bulb Effect) */}
             <div className={`fixed inset-0 pointer-events-none transition-opacity duration-700 z-[1] ${isLightMode ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 mix-blend-overlay"></div>
@@ -79,7 +75,7 @@ const Hero = ({ onOpenPanel }) => {
 
 
             {/* Top Bar / Header */}
-            <div className="absolute top-0 left-0 right-0 h-14 bg-[#0f0f11] border-b border-white/5 flex items-center px-4 md:px-6 justify-between z-40 text-[11px] md:text-[13px] tracking-wide text-stone-500">
+            <div className="absolute top-0 left-0 w-full h-14 bg-[#0f0f11] border-b border-white/5 flex items-center px-4 md:px-6 justify-between z-40 text-[11px] md:text-[13px] tracking-wide text-stone-500">
                 <div className="flex items-center gap-2 min-w-[140px] md:min-w-[200px]">
                     <span className="text-stone-400 font-bold">ECHO</span>
                     <span className="text-stone-600">→</span>
@@ -96,7 +92,7 @@ const Hero = ({ onOpenPanel }) => {
             </div>
 
             {/* Main Content Grid */}
-            <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[90%] 2xl:scale-110 2xl:origin-top mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mt-20 md:mt-28 mb-20 md:mb-0 transition-all duration-500">
+            <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[90%] 2xl:scale-110 2xl:origin-top mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start mt-20 md:mt-28 mb-20 md:mb-0 transition-all duration-500 px-4 sm:px-6 md:px-8">
 
                 {/* Left Side - System Status */}
                 <div className="lg:col-span-3 order-3 lg:order-1">
@@ -135,7 +131,7 @@ const Hero = ({ onOpenPanel }) => {
                                 <span className="text-stone-600">•</span>
                                 <div className="flex-1">
                                     <span className="text-stone-600">Focus:</span>
-                                    <div className="text-stone-300 mt-1">Web Solutions / DX</div>
+                                    <div className="text-stone-300 mt-1">Web Solutions / Gen AI</div>
                                 </div>
                             </div>
 
@@ -181,16 +177,16 @@ const Hero = ({ onOpenPanel }) => {
                 {/* Center - Main Greeting */}
                 <div className="lg:col-span-5 lg:pl-8 order-1 lg:order-2">
                     <div className="mb-3">
-                        <span className="text-stone-400 text-3xl transition-all duration-500 ease-in-out inline-block min-w-[120px]">
+                        <span className="text-stone-400 text-2xl md:text-3xl transition-all duration-500 ease-in-out inline-block min-w-[120px]">
                             {greeting},
                         </span>
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-normal text-stone-200 mb-5 leading-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal text-stone-200 mb-5 leading-tight">
                         I'm Naman Jain.
                     </h1>
                     <div className="space-y-3">
-                        <p className="text-stone-400 text-2xl">Full Stack Engineer.</p>
-                        <p className="text-stone-500 text-xl">“Building scalable systems that last.”</p>
+                        <p className="text-stone-400 text-xl md:text-2xl">Full Stack Engineer.</p>
+                        <p className="text-stone-500 text-base md:text-xl">“Building scalable systems that last.”</p>
                     </div>
                 </div>
 
@@ -219,7 +215,7 @@ const Hero = ({ onOpenPanel }) => {
 
                             {/* Tech Tags */}
                             <div className="flex flex-wrap gap-1.5 mb-3">
-                                {['* Open Source Contributor', "* Freelancer",].map(tag => (
+                                {['* Open Source Contributor', "* Freelance Trainer", "* Freelancer"].map(tag => (
                                     <span key={tag} className="px-2 py-0.5 text-[10px] bg-stone-800/50 border border-white/5 text-stone-400 rounded">
                                         {tag}
                                     </span>
@@ -281,30 +277,30 @@ const Hero = ({ onOpenPanel }) => {
             </div>
 
             {/* Bottom CMD Bar */}
-            <div className="hidden md:block absolute bottom-5 left-0 right-0 max-w-6xl mx-auto px-4 z-40">
+            <div className="absolute bottom-5 left-0 right-0 max-w-6xl mx-auto px-4 z-40">
                 <div className="bg-[#0f0f11]/90 backdrop-blur-md border border-white/10 rounded flex items-center justify-between px-4 md:px-6 py-3 shadow-2xl">
-                    <div className="flex items-center gap-3 md:gap-6 min-w-fit">
+                    <div className="flex items-center gap-3 md:gap-6 min-w-fit pr-4 border-r border-white/5 md:border-none">
                         <span className="text-stone-500 text-[10px] md:text-xs font-mono font-bold tracking-wider whitespace-nowrap">&lt; CMD INPUT</span>
                     </div>
-                    <div className="flex items-center gap-4 md:gap-6 text-xs font-mono overflow-x-auto no-scrollbar scroll-smooth">
-                        <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursror-pointer">
+                    <div className="flex items-center gap-5 md:gap-6 text-xs font-mono overflow-x-auto no-scrollbar scroll-smooth">
+                        <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer">
                             <span className="text-emerald-500/50">&gt;</span>
                             <span>/skills</span>
                         </a>
-                        <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursror-pointer">
+                        <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer">
                             <span className="text-emerald-500/50">&gt;</span>
                             <span>/projects</span>
                         </a>
 
-                        <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap">
+                        <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer">
                             <span className="text-emerald-500/50">&gt;</span>
                             <span>/experience</span>
                         </a>
-                        <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap">
+                        <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer">
                             <span className="text-emerald-500/50">&gt;</span>
                             <span>/about</span>
                         </a>
-                        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap">
+                        <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-stone-500 hover:text-stone-300 transition-colors flex items-center gap-2 whitespace-nowrap cursor-pointer">
                             <span className="text-emerald-500/50">&gt;</span>
                             <span>/contact</span>
                         </a>

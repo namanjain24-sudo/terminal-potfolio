@@ -36,6 +36,9 @@ const Skills = ({ onClose }) => {
         { name: 'Postman', icon: 'postman' },
         { name: 'Framer Motion', icon: '/assets/framer.png' }, // or 'motion' if framermotion doesn't exist, checking skillicons docs usually 'motion' works or 'framer'
         { name: 'Power BI', icon: '/assets/power.png' },
+        { name: 'Generative AI', icon: '/assets/genai-logo.png' },
+        { name: 'Prompt Engineering', icon: 'bots' },
+        { name: 'Tableau', icon: '/assets/tableau-logo.png' },
     ];
 
     // Additional skills without direct icon match might need handling or excluded from the visual grid if they break layout.
@@ -121,7 +124,7 @@ const Skills = ({ onClose }) => {
             <div className="max-w-6xl mx-auto px-6">
 
                 {/* 1. Technical Skills Grid - Compact & Sleek */}
-                <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 mb-6">
+                <div className="grid grid-cols-6 sm:grid-cols-7 md:grid-cols-8 lg:grid-cols-10 gap-1.5 mb-6">
                     {skills.map((skill, idx) => (
                         <motion.div
                             key={idx}
@@ -129,12 +132,12 @@ const Skills = ({ onClose }) => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: idx * 0.03, duration: 0.3 }} // Slower stagger
                             viewport={{ once: true }}
-                            className="aspect-square bg-[#222] border border-white/5 rounded-lg flex items-center justify-center p-2 md:p-4 group hover:bg-[#2a2a2a] transition-colors relative overflow-hidden shadow-sm cursor-help"
+                            className="aspect-square bg-[#222] border border-white/5 rounded-lg flex items-center justify-center p-1 sm:p-1.5 md:p-2 group hover:bg-[#2a2a2a] transition-colors relative overflow-hidden shadow-sm cursor-pointer"
                         >
                             <img
                                 src={skill.customUrl || (skill.icon.includes('/') || skill.icon.includes('.') ? skill.icon : iconUrl(skill.icon))}
                                 alt={skill.name}
-                                className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-50 group-hover:opacity-100 group-hover:scale-110 pb-2" // Added padding bottom to make room/shift for tooltip
+                                className="max-w-[85%] max-h-[85%] w-auto h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 opacity-50 group-hover:opacity-100 group-hover:scale-110" 
                                 loading="lazy"
                             />
 
@@ -155,7 +158,7 @@ const Skills = ({ onClose }) => {
 
 
                     {/* Card 2: Professional Skills - Span 5 */}
-                    <div className="col-span-1 md:col-span-6 bg-[#202022] border border-white/5 rounded-xl p-5 flex flex-col justify-between h-full min-h-[320px] shadow-lg">
+                    <div className="col-span-1 md:col-span-12 bg-[#202022] border border-white/5 rounded-xl p-5 flex flex-col justify-between h-auto shadow-lg">
                         <div>
                             <h3 className="text-lg font-bold text-white mb-1">Professional Skills</h3>
                             <p className="text-stone-500 text-xs mb-4">
@@ -170,27 +173,10 @@ const Skills = ({ onClose }) => {
                                 ))}
                             </div>
                         </div>
-
-                        {/* Interactive Icons Bottom Row */}
-                        {/* <div className="grid grid-cols-4 gap-2 mt-4">
-                            {[
-                                { icon: <MousePointer2 size={14} />, label: 'Hover' },
-                                { icon: <MousePointer2 size={14} />, label: 'Click' },
-                                { icon: <Scroll size={14} />, label: 'Scroll' },
-                                { icon: <Move size={14} />, label: 'Drag' },
-                            ].map((item, i) => (
-                                <div key={i} className="flex flex-col items-center gap-1.5 p-2 bg-[#252527] rounded-lg border border-white/5 group hover:bg-[#2a2a2c] transition-colors">
-                                    <div className="text-stone-600 group-hover:text-stone-300 transition-colors">
-                                        {item.icon}
-                                    </div>
-                                    <span className="text-[9px] text-stone-600 uppercase tracking-wider font-semibold">{item.label}</span>
-                                </div>
-                            ))}
-                        </div> */}
                     </div>
 
                     {/* Card 3: Navigation - Span 3 - Adapted from User Snippet */}
-                    <div className="col-span-1 md:col-span-6 h-full min-h-[200px] relative">
+                    <div className="col-span-1 md:col-span-12 h-full min-h-[200px] relative hidden lg:block">
                         <div className={`w-full h-full bg-[#202022] border border-white/5 rounded-xl transition-all duration-300 overflow-hidden shadow-lg flex flex-col relative`}>
 
                             {/* Closed State (Default) */}

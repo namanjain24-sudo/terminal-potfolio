@@ -11,7 +11,7 @@ const Experience = () => {
             period: 'JUNE_2025 - AUG_2025',
             location: 'Remote ',
             description: "Built a full-stack LMS using MERN stack with role-based access, dynamic course management, REST APIs, and responsive React UI optimized for performance and scalability.",
-            tech: ['React', 'Node.js', 'AWS','Mongodb','Next.js','Tailwind CSS'],
+            tech: ['React', 'Node.js', 'AWS', 'Mongodb', 'Next.js', 'Tailwind CSS'],
             stats: "Used by 100+ Users",
             accessLevel: 'Lvl. 5'
         },
@@ -25,6 +25,17 @@ const Experience = () => {
             tech: ['Next.js', 'PostgreSQL', 'TypeScript', 'Socket.io', 'Tailwind CSS', 'Shadcn UI', 'Prisma', 'Stripe', 'Auth.js', 'AWS', 'Node.js', 'MongoDB'],
             stats: "Used by 200+ Users",
             accessLevel: 'Lvl. 3'
+        },
+        {
+            id: 'ID-5502',
+            role: 'GEN AI TRAINER',
+            company: 'FREELANCE',
+            period: 'AUG_2025 - PRESENT',
+            location: 'Remote',
+            description: "Empowering next-gen developers through specialized Gen AI training modules. Successfully mentored 20+ students in Prompt Engineering, LLM integration, and building autonomous AI agents with real-world utility.",
+            tech: ['Generative AI', 'Prompt Engineering', 'OpenAI', 'LangChain', 'Llama 3', 'RAG'],
+            stats: "Trained 20+ Students",
+            accessLevel: 'Lvl. 4'
         }
     ];
 

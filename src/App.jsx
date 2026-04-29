@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Projects from './components/Projects';
 import Hero from './components/Hero';
@@ -14,19 +14,34 @@ function App() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [lastScrollTime, setLastScrollTime] = useState(0);
   const [scrollToSection, setScrollToSection] = useState(null);
+  
+  const panelRef = useRef(null);
+  const sectionsRef = {
+    skills: useRef(null),
+    projects: useRef(null),
+    experience: useRef(null),
+    about: useRef(null),
+    contact: useRef(null)
+  };
 
-  // Handle Scroll to Section when Panel Opens
+  // Unified Scroll Handler
   useEffect(() => {
-    if (isPanelOpen && scrollToSection) {
-      // Small timeout to ensure DOM is rendered (Framer Motion mount)
-      const timer = setTimeout(() => {
-        const element = document.getElementById(scrollToSection);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+    if (isPanelOpen && scrollToSection && panelRef.current) {
+      // Use a slightly longer timeout to ensure Framer Motion has finished the mount
+      const scrollTimer = setTimeout(() => {
+        const targetElement = sectionsRef[scrollToSection]?.current;
+        const panel = panelRef.current;
+        
+        if (targetElement && panel) {
+          const targetTop = targetElement.offsetTop;
+          panel.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+          });
+          setScrollToSection(null);
         }
-        setScrollToSection(null); // Reset after scroll command
-      }, 500); // 500ms delay to allow slide animation to start/content to mount
-      return () => clearTimeout(timer);
+      }, 500);
+      return () => clearTimeout(scrollTimer);
     }
   }, [isPanelOpen, scrollToSection]);
 
@@ -37,29 +52,24 @@ function App() {
     }
   };
 
-  // Wheel Event Handler for "Slide" Navigation
+  // Wheel Event Handler
   useEffect(() => {
     const handleWheel = (e) => {
       const now = Date.now();
-      const panel = document.getElementById('content-panel');
+      const panel = panelRef.current;
 
-      // 1. Scroll Forwarding: If panel is open and mouse is OUTSIDE the panel (e.g. on Hero),
-      // forward the scroll event to the panel so the user can scroll content from anywhere.
+      // Forward scroll to panel if mouse is on Hero
       if (isPanelOpen && panel && !panel.contains(e.target)) {
         panel.scrollTop += e.deltaY;
+        return;
       }
 
-      // 2. State Toggling (Open/Close): Throttled to prevent double-firing
       if (now - lastScrollTime < 500) return;
 
-      // Scroll Down -> Open Panel
-      if (e.deltaY > 10 && !isPanelOpen) {
+      if (e.deltaY > 5 && !isPanelOpen) {
         setIsPanelOpen(true);
         setLastScrollTime(now);
-      }
-      // Scroll Up (at top of panel) -> Close Panel
-      else if (e.deltaY < -40 && isPanelOpen) {
-        // Only close if panel is at the very top
+      } else if (e.deltaY < -30 && isPanelOpen) {
         if (panel && panel.scrollTop === 0) {
           setIsPanelOpen(false);
           setLastScrollTime(now);
@@ -67,7 +77,7 @@ function App() {
       }
     };
 
-    window.addEventListener('wheel', handleWheel);
+    window.addEventListener('wheel', handleWheel, { passive: true });
     return () => window.removeEventListener('wheel', handleWheel);
   }, [isPanelOpen, lastScrollTime]);
 
@@ -75,89 +85,72 @@ function App() {
     <div className="bg-[#0a0a0a] min-h-screen text-white overflow-x-hidden relative font-sans">
       <CursorSpotlight />
 
-      {/* --- MOBILE LAYOUT (Vertical Scroll) < md --- */}
+      {/* --- MOBILE LAYOUT --- */}
       <div className="md:hidden flex flex-col">
         <Hero onOpenPanel={null} />
-        {/* Sections rendered normally below Hero */}
         <div className="bg-[#0a0a0a] relative z-20">
-          <Skills onClose={() => { }} />
-          <Projects />
-          <Experience />
-          <AboutMe />
-          <Contact />
-          <div className="pb-24"></div> {/* Bottom padding for mobile nav */}
+          <div id="skills"><Skills onClose={() => { }} /></div>
+          <div id="projects"><Projects /></div>
+          <div id="experience"><Experience /></div>
+          <div id="about"><AboutMe /></div>
+          <div id="contact"><Contact /></div>
+          
+          {/* Mobile Socials */}
+          <div className="px-6 py-12 flex justify-center gap-6 border-t border-white/5">
+                <a href="https://linkedin.com" target="_blank" className="text-stone-500 hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://github.com" target="_blank" className="text-stone-500 hover:text-white transition-colors">GitHub</a>
+                <a href="mailto:namanjainpy@gmail.com" className="text-stone-500 hover:text-white transition-colors">Email</a>
+          </div>
         </div>
-
-        {/* Mobile Navigation Bar */}
         <Sidebar />
       </div>
 
-
-      {/* --- DESKTOP LAYOUT (Fixed Hero + Sliding Panel) >= md --- */}
+      {/* --- DESKTOP LAYOUT --- */}
       <div className="hidden md:block">
-        {/* Layer 0: Fixed Hero Section (Background) */}
         <div className="fixed inset-0 z-0">
-          <div className={`transition-all duration-700 w-full h-full ${isPanelOpen ? 'opacity-20 md:opacity-100' : 'opacity-100'}`}>
+          <div className={`transition-all duration-700 w-full h-full ${isPanelOpen ? 'opacity-20' : 'opacity-100'}`}>
             <Hero onOpenPanel={handleOpenPanel} />
           </div>
         </div>
 
-        {/* Layer 1: Sliding Content Panel (Skills + Projects) */}
-        <AnimatePresence>
-          {isPanelOpen && (
-            <>
-              <motion.div
-                id="content-panel"
-                initial={{ x: '-100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '-100%' }}
-                transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-                className="fixed top-0 bottom-0 left-0 z-20 w-[60%] md:w-1/2 bg-[#0a0a0a]/95 backdrop-blur-xl border-r border-white/10 overflow-y-auto shadow-2xl"
-              >
-                <div className="flex flex-col min-h-screen">
-                  <Skills onClose={() => setIsPanelOpen(false)} />
-                  <Projects />
-                  <Experience />
-                  <AboutMe />
-                  <Contact />
-
-                </div>
-              </motion.div>
-
-              {/* Vertical Social Sidebar */}
-              <SocialSidebar />
-            </>
-          )}
-        </AnimatePresence>
-
-        {/* Hint / UI Control */}
-        {!isPanelOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="fixed bottom-10 right-10 z-10 hidden md:flex flex-col items-center gap-2"
-          >
-            <span className="text-[10px] text-stone-500 uppercase tracking-widest animate-pulse">Scroll to Explore</span>
-            {/* <div className="w-[1px] h-12 bg-stone-700"></div> */}
-          </motion.div>
-        )}
-
-        {/* Close Panel Overlay - Click on Hero to Close */}
+        {/* Close Panel Overlay */}
         {isPanelOpen && (
           <div
             onClick={() => setIsPanelOpen(false)}
             className="fixed top-0 right-0 bottom-0 w-1/2 z-10 hidden md:block cursor-pointer"
             aria-label="Close panel"
-            title="Click to close"
           />
         )}
 
+        <AnimatePresence>
+          {isPanelOpen && (
+            <>
+              <motion.div
+                id="content-panel"
+                ref={panelRef}
+                initial={{ x: '-100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '-100%' }}
+                transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+                className="fixed top-0 bottom-0 left-0 z-20 w-[60%] md:w-1/2 bg-[#0a0a0a]/95 backdrop-blur-xl border-r border-white/10 overflow-y-auto shadow-2xl no-scrollbar"
+              >
+                <div className="flex flex-col min-h-screen">
+                  <div ref={sectionsRef.skills}><Skills onClose={() => setIsPanelOpen(false)} /></div>
+                  <div ref={sectionsRef.projects}><Projects /></div>
+                  <div ref={sectionsRef.experience}><Experience /></div>
+                  <div ref={sectionsRef.about}><AboutMe /></div>
+                  <div ref={sectionsRef.contact}><Contact /></div>
+                </div>
+              </motion.div>
+              <SocialSidebar />
+            </>
+          )}
+        </AnimatePresence>
+
         <Sidebar />
       </div>
-
     </div>
   );
 }
 
 export default App;
-

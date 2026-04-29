@@ -95,6 +95,8 @@ const AboutMe = () => {
                                             <span className="text-stone-300">{'{'}</span> <span className="text-blue-300">year</span>: <span className="text-emerald-500">2024</span>, <span className="text-blue-300">event</span>: <span className="text-orange-300">"Admission In Newton School Of Technology(RU)"</span>, <span className="text-stone-500 text-xs">// Deep dive to buid successfull future</span> <span className="text-stone-300">{'}'},</span>
                                         </div>
 
+
+
                                         {/* Step 3 */}
                                         <div className="hover:bg-white/5 p-1 -ml-1 rounded transition-colors">
                                             <span className="text-stone-300">{'{'}</span> <span className="text-blue-300">year</span>: <span className="text-emerald-500">2025</span>, <span className="text-blue-300">event</span>: <span className="text-orange-300">"Got Offer Letter For First Intership"</span>, <span className="text-stone-500 text-xs">// MERN Stack mastery</span> <span className="text-stone-300">{'}'},</span>
@@ -103,6 +105,11 @@ const AboutMe = () => {
                                         {/* Step 4 */}
                                         <div className="hover:bg-white/5 p-1 -ml-1 rounded transition-colors">
                                             <span className="text-stone-300">{'{'}</span> <span className="text-blue-300">year</span>: <span className="text-emerald-500">2025</span>, <span className="text-blue-300">event</span>: <span className="text-orange-300">"Contributed To Open Source Projects"</span>, <span className="text-stone-500 text-xs"></span> <span className="text-stone-300">{'}'},</span>
+                                        </div>
+
+                                        {/* Step 2.5: Gen AI Training */}
+                                        <div className="hover:bg-white/5 p-1 -ml-1 rounded transition-colors">
+                                            <span className="text-stone-300">{'{'}</span> <span className="text-blue-300">year</span>: <span className="text-emerald-500">2026</span>, <span className="text-blue-300">event</span>: <span className="text-orange-300">"Freelance Gen AI Trainer"</span>, <span className="text-stone-500 text-xs">// Trained 20+ students in Gen AI</span> <span className="text-stone-300">{'}'},</span>
                                         </div>
 
                                         {/* Step 5 */}
