@@ -12,7 +12,7 @@ const Projects = () => {
             tech: ['Next.js', 'Tailwind', 'JavaScript', 'Node.js'],
             link: 'https://talent-1k5h60cdg-namanjain24-sudos-projects.vercel.app?_vercel_share=IzZ13dafQ3iS8ilNELdaRVAB9oT5w6re',
             github: 'https://github.com/namanjain24-sudo/talent-IQ',
-            video: '/talent-iq.mp4',
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/talent-iq.mp4',
             image: null
         },
         {
@@ -24,7 +24,7 @@ const Projects = () => {
             github: 'https://github.com/namanjain24-sudo/HomeScope360',
             status: 'active',
             type: 'widget',
-            video: '/homescape360.mp4'
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/homescape360.mp4'
         },
         {
             id: '03',
@@ -35,7 +35,7 @@ const Projects = () => {
             github: 'https://github.com/namanjain24-sudo/CryptoVision',
             status: 'deployed',
             type: 'browser',
-            video: '/CryptoVision.mp4'
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/CryptoVision.mp4'
         },
         {
             id: '04',
@@ -46,7 +46,7 @@ const Projects = () => {
             github: 'https://github.com/namanjain24-sudo/archforge',
             status: 'prototype',
             type: 'terminal',
-            video: '/ArchForge.mP4'
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/ArchForge.mP4'
         },
         //     {
         //         id: '05',
