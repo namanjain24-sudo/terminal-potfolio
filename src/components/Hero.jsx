@@ -227,11 +227,11 @@ const Hero = ({ onOpenPanel }) => {
 
                                 <div className="flex items-center gap-1">
                                     <span className="text-stone-600">•</span>
-                                    <span className="text-stone-500">147 commits</span>
+                                    <span className="text-stone-500">open source contributor</span>
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <span className="text-stone-600">•</span>
-                                    <span className="text-stone-500">+764 followers</span>
+                                    <span className="text-stone-500">npm · easycron-cli</span>
                                 </div>
                                 {/* <a href="/resume.pdf" download className="flex items-center gap-3 text-xs text-stone-400 hover:text-emerald-400 transition-colors group p-2 hover:bg-emerald-500/5 rounded-sm border border-transparent hover:border-emerald-500/20 mt-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
