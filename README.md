@@ -1,16 +1,27 @@
-# React + Vite
+# Terminal portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal site, styled like a terminal session. Skills, projects, experience and contact are navigated with shell-style commands or the nav links.
 
-Currently, two official plugins are available:
+Live: https://naman-potfolio.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Terminal portfolio demo](docs/demo.gif)
 
-## React Compiler
+## Sections
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Hero with a system-status panel and quick links
+- Projects as terminal cards, each with a short preview, the stack and links to source and deployment
+- Experience as a timeline, including open-source contributions
+- Skills grid and a contact section
 
-## Expanding the ESLint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Project videos in `public/` are stored with Git LFS, so run `git lfs install` before cloning if you want them locally.
+
+## Stack
+
+React, Vite, Tailwind CSS, Framer Motion, lucide-react.
