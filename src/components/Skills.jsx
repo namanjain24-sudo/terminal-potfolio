@@ -34,6 +34,13 @@ const Skills = ({ onClose }) => {
         { name: 'GitHub', icon: 'github' },
         { name: 'Figma', icon: 'figma' },
         { name: 'Postman', icon: 'postman' },
+        { name: 'FastAPI', icon: 'fastapi' },
+        { name: 'Docker', icon: 'docker' },
+        { name: 'GitHub Actions', icon: 'githubactions' },
+        { name: 'PyTorch', icon: 'pytorch' },
+        { name: 'scikit-learn', icon: 'sklearn' },
+        { name: 'Vitest', icon: 'vitest' },
+        { name: 'Rust', icon: 'rust' },
         { name: 'Framer Motion', icon: '/assets/framer.png' }, // or 'motion' if framermotion doesn't exist, checking skillicons docs usually 'motion' works or 'framer'
         { name: 'Power BI', icon: '/assets/power.png' },
         { name: 'Generative AI', icon: '/assets/genai-logo.png' },

@@ -5,6 +5,17 @@ import { Briefcase, Calendar, MapPin, Terminal, Cpu, Shield, Globe, Lock } from 
 const Experience = () => {
     const experiences = [
         {
+            id: 'ID-7710',
+            role: 'OPEN SOURCE CONTRIBUTOR',
+            company: 'Apache DataFusion · Apache Airflow · Kolibri · RUXAILAB · AsyncAPI',
+            period: 'SEP_2025 - PRESENT',
+            location: 'Remote',
+            description: "18 merged pull requests across 5 organisations, 14 more in review. Substrait query-plan serialization fixes in DataFusion (Rust), scheduler and task-SDK fixes in Airflow (a task wrongly reported SUCCESS after SIGTERM), a crash fix in Kolibri, and auth, i18n and XSS fixes in RUXAILAB.",
+            tech: ['Rust', 'Python', 'Vue', 'TypeScript', 'GitHub Actions'],
+            stats: "18 PRs merged",
+            accessLevel: 'Lvl. 6'
+        },
+        {
             id: 'ID-8492',
             role: 'MERN STACK DEVELOPER',
             company: 'Klariti Learning',

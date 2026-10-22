@@ -7,69 +7,114 @@ const Projects = () => {
     const projects = [
         {
             id: '01',
-            title: 'Talent-IQ',
-            description: "The ultimate platform for collaborative coding interviews and pair programming. Connect face-to-face, code in real-time, and ace your technical interviews.",
-            tech: ['Next.js', 'Tailwind', 'JavaScript', 'Node.js'],
-            link: 'https://talent-1k5h60cdg-namanjain24-sudos-projects.vercel.app?_vercel_share=IzZ13dafQ3iS8ilNELdaRVAB9oT5w6re',
-            github: 'https://github.com/namanjain24-sudo/talent-IQ',
-            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/talent-iq.mp4',
-            image: null
+            title: 'verbatim',
+            description: "Meeting intelligence for Hinglish calls. Cited minutes, decisions and action items where every claim carries a timestamped citation back to the transcript, and anything that cannot be grounded is dropped. 100% precision on the adversarial set, ~$0.08 per meeting-hour, self-hosted.",
+            tech: ['Python', 'FastAPI', 'Whisper', 'Qdrant', 'Playwright'],
+            link: 'https://github.com/namanjain24-sudo/verbatim',
+            github: 'https://github.com/namanjain24-sudo/verbatim',
+            status: 'open source',
+            image: 'https://raw.githubusercontent.com/namanjain24-sudo/verbatim/main/web/assets/shot-dashboard.png'
         },
         {
             id: '02',
-            title: 'HomeScope360',
-            description: "Advanced property listing engine featuring interactive 360° virtual tours, live pricing synchronization, and high-precision home search protocols.",
-            tech: ['React', 'HTML5', 'CSS3', 'JavaScript'],
-            link: 'https://home-scope360-ptoo85afk-namanjain24-sudos-projects.vercel.app/',
-            github: 'https://github.com/namanjain24-sudo/HomeScope360',
-            status: 'active',
-            type: 'widget',
-            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/homescape360.mp4'
+            title: 'Gauntlet',
+            description: "Adversarial arena for prompt-injection defenses. Holds whole attack families out of training, evolves new attacks with a 21-operator mutation search, and checks the result against 662 real human-written injections. Five defenders benchmarked; plug your own in over HTTP. Runs on a laptop CPU, no API keys.",
+            tech: ['Python', 'scikit-learn', 'PyTorch', 'pytest'],
+            link: 'https://github.com/namanjain24-sudo/gauntlet',
+            github: 'https://github.com/namanjain24-sudo/gauntlet',
+            status: 'research',
+            image: 'https://raw.githubusercontent.com/namanjain24-sudo/gauntlet/main/reports/preview.png'
         },
         {
             id: '03',
-            title: 'CryptoVision',
-            description: "Real-time cryptocurrency analytics grid synchronizing live market tickers and interactive telemetry charts via high-frequency REST APIs.",
-            tech: ['React', 'Tailwind', 'Chart.js', 'REST API'],
-            link: 'https://crypto-vision-ecru.vercel.app/',
-            github: 'https://github.com/namanjain24-sudo/CryptoVision',
-            status: 'deployed',
-            type: 'browser',
-            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/CryptoVision.mp4'
+            title: 'ArchForge',
+            description: "Type a product idea in plain English and get a verified 15-20 component system architecture with capacity math, per-component reasoning and a Well-Architected review. Three deterministic verification layers sit between the model and the canvas. Benchmarked at 98% recall against Uber, Instagram and Netflix.",
+            tech: ['React', 'React Flow', 'Node.js', 'Express', 'LLM'],
+            link: 'https://archforge.vercel.app/',
+            github: 'https://github.com/namanjain24-sudo/archforge',
+            status: 'live',
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/ArchForge.mP4'
         },
         {
             id: '04',
-            title: 'ArchForge',
-            description: "ArchForge is a concept-driven platform that explores innovative architectural ideas through digital design and visualization. It showcases creative problem-solving and modern design thinking, though it is a conceptual project and may not fully reflect real-world accuracy.",
-            tech: ['React.js', 'Next.js', 'Tailwind CSS', 'JavaScript', 'HTML5', 'CSS3'],
-            link: 'https://archforge.vercel.app/?_vercel_share=JDxYCZUkL8Jlinv2JTUq5TpgbNv7UcRK',
-            github: 'https://github.com/namanjain24-sudo/archforge',
-            status: 'prototype',
-            type: 'terminal',
-            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/ArchForge.mP4'
+            title: 'Hindsight',
+            description: "Financial news intelligence that grades itself. Ingests 14 live sources, dedupes them into events, scores market impact with grounded LLM analysis, and seals every directional call before the outcome exists so accuracy is measured against real price moves rather than asserted.",
+            tech: ['Python', 'FastAPI', 'Next.js', 'GitHub Actions'],
+            link: 'https://github.com/namanjain24-sudo/hindsight',
+            github: 'https://github.com/namanjain24-sudo/hindsight',
+            status: 'open source',
+            image: null
         },
-        //     {
-        //         id: '05',
-        //         title: 'chat_protocol',
-        //         description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
-        //         tech: ['Socket.io', 'React', 'Node'],
-        //         link: '#',
-        //         github: '#',
-        //         status: 'prototype',
-        //         type: 'terminal',
-        //         video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
-        //     },
-        //     {
-        //         id: '06',
-        //         title: 'chat_protocol',
-        //         description: "Real-time messaging grid ensuring instant communication via WebSocket secure tunnels.",
-        //         tech: ['Socket.io', 'React', 'Node'],
-        //         link: '#',
-        //         github: '#',
-        //         status: 'prototype',
-        //         type: 'terminal',
-        //         video: 'https://cdn.coverr.co/videos/coverr-typing-on-a-keyboard-4611/1080p.mp4'
-        //     }
+        {
+            id: '05',
+            title: 'Nova',
+            description: "A visual website builder for the browser. Drag blocks onto a canvas, style them in an inspector, and export a dependency-free site as HTML or React. 46 blocks, 24 templates, responsive breakpoints, undo/redo, a command palette and one-click publishing.",
+            tech: ['React', 'TypeScript', 'Vite', 'Node.js'],
+            link: 'https://github.com/namanjain24-sudo/nova',
+            github: 'https://github.com/namanjain24-sudo/nova',
+            status: 'open source',
+            image: null
+        },
+        {
+            id: '06',
+            title: 'ClipStudio',
+            description: "A timeline video editor that runs entirely in the browser. Multi-track editing, eased keyframes, chroma key, colour grading, transitions, captions transcribed locally with Whisper, and a real MP4 encoded on your machine through WebCodecs. Nothing is uploaded to render.",
+            tech: ['Next.js', 'React', 'TypeScript', 'WebCodecs', 'Prisma'],
+            link: 'https://github.com/namanjain24-sudo/clipstudio',
+            github: 'https://github.com/namanjain24-sudo/clipstudio',
+            status: 'open source',
+            image: 'https://raw.githubusercontent.com/namanjain24-sudo/clipstudio/main/test-editor.png'
+        },
+        {
+            id: '07',
+            title: 'Witness',
+            description: "Bug report in, verified reproduction out. Takes a vague human-written bug report and drives a real browser to reproduce it, claiming CONFIRMED only after deterministic checks trip on three clean re-runs. Precision is gated at 100% in the eval harness; recall is reported honestly.",
+            tech: ['TypeScript', 'Playwright', 'Vite', 'Vitest'],
+            link: 'https://github.com/namanjain24-sudo/witness',
+            github: 'https://github.com/namanjain24-sudo/witness',
+            status: 'in progress',
+            image: null
+        },
+        {
+            id: '08',
+            title: 'easycron',
+            description: "Cron that survives free-tier hosting. Takes a schedule in plain English, compiles it to cron, and wires up an external trigger through GitHub Actions, UptimeRobot or cron-job.org so the job fires even when Render or Railway puts the instance to sleep. Published on npm as easycron-cli.",
+            tech: ['Node.js', 'npm', 'GitHub Actions'],
+            link: 'https://www.npmjs.com/package/easycron-cli',
+            github: 'https://github.com/namanjain24-sudo/easycron',
+            status: 'live',
+            image: 'https://raw.githubusercontent.com/namanjain24-sudo/easycron/main/demo.gif'
+        },
+        {
+            id: '09',
+            title: 'Talent-IQ',
+            description: "Technical interview platform with a real-time collaborative code editor, video interviews and JWT auth, built for concurrent users.",
+            tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Tailwind'],
+            link: 'https://talent-1k5h60cdg-namanjain24-sudos-projects.vercel.app?_vercel_share=IzZ13dafQ3iS8ilNELdaRVAB9oT5w6re',
+            github: 'https://github.com/namanjain24-sudo/talent-IQ',
+            status: 'live',
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/talent-iq.mp4'
+        },
+        {
+            id: '10',
+            title: 'HomeScope360',
+            description: "Real-estate browser with interactive 360° virtual tours, search by neighbourhood and amenities, and saved listings.",
+            tech: ['React', 'Vite', 'Firebase', 'CSS3'],
+            link: 'https://home-scope360-hpgl.vercel.app/',
+            github: 'https://github.com/namanjain24-sudo/HomeScope360',
+            status: 'live',
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/homescape360.mp4'
+        },
+        {
+            id: '11',
+            title: 'CryptoVision',
+            description: "Crypto analytics dashboard with a live market ticker, portfolio view and interactive charts fed by REST APIs.",
+            tech: ['React', 'Tailwind', 'Chart.js', 'REST API'],
+            link: 'https://crypto-vision-ecru.vercel.app/',
+            github: 'https://github.com/namanjain24-sudo/CryptoVision',
+            status: 'live',
+            video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/CryptoVision.mp4'
+        }
     ];
 
     return (
@@ -276,11 +321,11 @@ const TerminalCard = ({ project, index }) => {
 
                     {/* Links */}
                     <div className="flex items-center gap-4 mt-auto pt-3 border-t border-white/5">
-                        <a href={project.github} className="flex items-center gap-2 text-[10px] text-stone-500 hover:text-white transition-colors">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] text-stone-500 hover:text-white transition-colors">
                             <Github size={12} />
                             <span>view_source</span>
                         </a>
-                        <a href={project.link} className="flex items-center gap-2 text-[10px] text-stone-500 hover:text-emerald-400 transition-colors ml-auto">
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] text-stone-500 hover:text-emerald-400 transition-colors ml-auto">
                             <span>execute_deployment</span>
                             <ArrowUpRight size={12} />
                         </a>
