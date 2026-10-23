@@ -90,7 +90,7 @@ const Projects = () => {
             title: 'Talent-IQ',
             description: "Technical interview platform with a real-time collaborative code editor, video interviews and JWT auth, built for concurrent users.",
             tech: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Tailwind'],
-            link: 'https://talent-1k5h60cdg-namanjain24-sudos-projects.vercel.app?_vercel_share=IzZ13dafQ3iS8ilNELdaRVAB9oT5w6re',
+            link: 'https://talent-iq-nu.vercel.app',
             github: 'https://github.com/namanjain24-sudo/talent-IQ',
             status: 'live',
             video: 'https://github.com/namanjain24-sudo/terminal-potfolio/raw/main/public/talent-iq.mp4'
